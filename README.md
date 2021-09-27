@@ -3,6 +3,7 @@
 * go 1.17
 * [go-playground/validator/v10](https://github.com/go-playground/validator) v10.9.0
 * [gorilla/mux](https://github.com/gorilla/mux) v1.8.0
+* [stretchr/testify](https://github.com/stretchr/testify) v1.7.0
 ### Installation
 ```bash
 $ git clone https://github.com/rabarbra/arithmetic_progression_workers_test.git
