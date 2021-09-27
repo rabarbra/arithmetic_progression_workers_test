@@ -12,11 +12,11 @@ $ ./workers_server -n 5
 ```
 ### Usage
 Add new task, where:
-n - number of elements in progression (positive int)
-d - delta between adjacent elements (float)
-n1 - first element (float)
-I - time interval between iterations (seconds, float)
-TTL - time serving done tasks before deleting *seconds, float)
+* n - number of elements in progression (positive int)
+* d - delta between adjacent elements (float)
+* n1 - first element (float)
+* I - time interval between iterations (seconds, float)
+* TTL - time serving done tasks before deleting *seconds, float)
 ```bash
 $ curl -X POST 127.0.0.0:8000/add -d'{"n":30,"d":1,"n1":0,"I":2,"TTL":50}'
 ```
