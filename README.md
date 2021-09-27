@@ -1,7 +1,7 @@
 ## Arithmetic progression workers
 ### Requirements
 * go 1.17
-* [go-playground/validator/v10](https://github.com/go-playground/validator/v10) v10.9.0
+* [go-playground/validator/v10](https://github.com/go-playground/validator) v10.9.0
 * [gorilla/mux](https://github.com/gorilla/mux) v1.8.0
 ### Installation
 ```bash
