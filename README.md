@@ -1,8 +1,8 @@
 ## Arithmetic progression workers
 ### Requirements
-*go 1.17
-*github.com/go-playground/validator/v10 v10.9.0
-*github.com/gorilla/mux v1.8.0
+* go 1.17
+* github.com/go-playground/validator/v10 v10.9.0
+* github.com/gorilla/mux v1.8.0
 ### Installation
 ```bash
 $ git clone https://github.com/rabarbra/arithmetic_progression_workers_test.git
