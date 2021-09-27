@@ -21,7 +21,7 @@ Add new task, where:
 $ curl -X POST 127.0.0.0:8000/add -d'{"n":30,"d":1,"n1":0,"I":2,"TTL":50}'
 ```
 
-Get all tasks sorted by status
+Get all tasks sorted by status:
 ```bash
 $ curl -X GET 127.0.0.0:8000/get
 ```
