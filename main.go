@@ -10,7 +10,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/gorilla/mux"
 
-	"example/workerstore"
+	"workers_server/workerstore"
 )
 
 var ws *workerstore.WorkerStore

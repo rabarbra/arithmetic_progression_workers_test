@@ -1,4 +1,4 @@
-module example
+module workers_server
 
 go 1.17
 

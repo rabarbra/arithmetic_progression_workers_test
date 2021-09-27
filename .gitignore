@@ -12,4 +12,4 @@
 *.out
 
 .vscode
-example
+workers_server
