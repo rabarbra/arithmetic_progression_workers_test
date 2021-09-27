@@ -67,7 +67,7 @@ func (w *WorkerStore) AddTask(task Task) Worker {
 }
 
 //Gets done worker id from done_chan, waits TTL and removes worker
-func (w *WorkerStore) WaitTtl() {
+func (w *WorkerStore) waitTtl() {
 	for {
 		select {
 		case id := <-w.done_chan:
@@ -82,7 +82,7 @@ func (w *WorkerStore) WaitTtl() {
 }
 
 //Executes worker and sends it's id to done_chan then frees one place in max_working channel.
-func (w *WorkerStore) ExecuteWorker(id int) {
+func (w *WorkerStore) executeWorker(id int) {
 	worker := w.workingdone[id]
 	worker.StartTime = time.Now().UTC().Format(time.RFC3339Nano)
 	worker.Status = Working
@@ -103,7 +103,7 @@ func (w *WorkerStore) ExecuteWorker(id int) {
 func (w *WorkerStore) StartWorkers() {
 	defer close(w.done_chan)
 	defer close(w.max_working)
-	go w.WaitTtl()
+	go w.waitTtl()
 	for {
 		if len(w.scheduled) > 0 {
 			w.max_working <- true
@@ -112,7 +112,7 @@ func (w *WorkerStore) StartWorkers() {
 				w.scheduled[i].NumInQueue = uint(i)
 			}
 			w.workingdone[w.next_id] = &w.scheduled[0]
-			go w.ExecuteWorker(w.next_id)
+			go w.executeWorker(w.next_id)
 			w.next_id++
 			w.scheduled = w.scheduled[1:]
 			w.mx.Unlock()
