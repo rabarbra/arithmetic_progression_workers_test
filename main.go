@@ -67,7 +67,6 @@ func main() {
 	router.HandleFunc("/add", NewTask).Methods("POST")
 	router.HandleFunc("/get", GetAllTasks).Methods("GET")
 
-	go ws.WaitTtl()
 	go ws.StartWorkers()
 
 	srv := &http.Server{

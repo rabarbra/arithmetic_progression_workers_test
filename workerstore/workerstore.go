@@ -101,6 +101,9 @@ func (w *WorkerStore) ExecuteWorker(id int) {
 //Waits until there is free place in max_working channel then takes one place in channel
 //Recalculates NumInQueue, sents first in queue worker to execution and removes it from queue
 func (w *WorkerStore) StartWorkers() {
+	defer close(w.done_chan)
+	defer close(w.max_working)
+	go w.WaitTtl()
 	for {
 		if len(w.scheduled) > 0 {
 			w.max_working <- true
